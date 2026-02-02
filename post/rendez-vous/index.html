@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/post.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <script type="text/x-mathjax-config">
+
+    MathJax.Hub.Config({
+
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+
+    });
+
+    </script>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
+    <title></title>
+</head>
+<body>
+
+    <nav class="navbar" aria-label="Main">
+    <div class="brand"><a href="/">LUNARIN</a></div>
+    <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/" style="padding-right: 10px;">About</a></li>
+    </ul>
+    </nav>
+     
+    <div class="box">
+        <img src="" alt="">
+        <div class="text">
+            <h2 style="margin-top: 21px;">External VGA GTX 980Ti Rendez-vous | 노트북 & 그래픽카드</h2>
+
+            <div style="display: flex; justify-content: center;">
+                <img src="/assets/img/rendez-vous/gtx980ti.jpg" style="width: 100%; height: 90vh; object-fit: cover;">
+            </div>
+
+            <div style="padding: 30px; padding-top: 30px;">
+                GeForce GTX 980 Ti was a high-end graphics card by NVIDIA, launched on June 2nd, 2015. The launch price at the time was $649. Its architecture is named after James Clerck Maxwell, the founder of the theory of electromagnetic radiation. GPU(Graphics Processing Unit) architecture is the foundation of modern computing, designed to handle complex parallel processing tasks with efficiency.
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                I used EXP GDC because of the lack of Thunderbolt support. EXP GDC is a notebook built-in PCI-E interface extended to the switching equipment outside, can be used to access any of the PCI-E interface equipment, used to enhance the performance of the notebook, the use of an external graphic card to play the game. PCIe(Peripheral Component Interconnect Express) is a high-speed interface standard utilized for rapid data transfer between electronic components. Common applications for PCIe slots include integrating NVMe SSDs for enhanced storage performance, upgrading graphics cards for superior gaming capabilities, connecting multiple displays via dedicated cards, and expanding networking options with PCIe Ethernet adapters.
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px; padding-bottom: 0px; font-weight: 600;">
+                Setup Method
+            </div>
+
+            <div style="padding: 30px; padding-top: 7px;">
+                The installation involves replacing the laptop’s internal M.2 Wi-Fi and Bluetooth module with the EXP GDC interface. Power is delivered to the GPU and the docking station through an external power supply. Depending on the specific laptop configuration, particularly those utilizing integrated graphics, it is necessary to remove pre-installed graphics drivers to avoid hardware conflicts and recognition issues. I did it via Display Driver Uninstaller(DDU). The process is finalized by installing the specific drivers for the newly connected graphics card.
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                In terms of single-core performance, the RYZEN 4700U is on par with the i5-7600K. The multi-threaded score is slightly lower than that of the i7-8700K. The RYZEN 4700U has the potential to pair effectively with the GTX 980 Ti under the appropriate circumstances. To valide this, I measured the graphics card's performance using 3DMark for a comprehensive evaluation. Fire Strike is a showcase DirectX 11 benchmark for modern gaming PCs. DirectX acts as an intermediary between the game and the hardware drivers. According to Oreate AI, when DX12 was first released in 2015, its performance did not immediately surpass that of DX11 due to its inherent complexity. It is noted that developers required time to adapt and fully harness its capabilities. Therefore, I decided to run a Fire Strike benchmark for the NVIDIA GTX 980 Ti.
+
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                The Fire Strike scored 13,184. It is comparable to the performance of a GTX 1060 6GB. While a standard GTX 980 Ti typically scores between 17,000 and 20,000 points, the setup experienced approximately a 30% performance loss due to interface limitations. The performance loss in the EXP GDC setup primarily stems from the limited PCIe bandwidth.                 PCIe slots are available in various lengths and lane configurations. This number indicates the slot's data lanes, which can be compared to the lanes on a highway. For instance, an x16 slot provides 16 data lanes, offering significantly higher throughput compared to smaller slots like x1, which has only a single data lane. EXP GDC adapters typically connect via a PCIe x1 interface. This creates a significant bottleneck, as the limited bandwidth of a single lane leads to a massive performance loss compared to a native desktop setup.
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                As specified in Section 4.2 of the PCIe 5.0 Specification (PCI-SIG, 2019), the 2.5 GT/s data rate maintained for backward compatibility utilizes 8b/10b encoding. This results in a 20% bandwidth overhead for data transmission. Unlike a desktop where the GPU communicates directly with the display, the EXP GDC setup often necessitates a data loopback to the laptop's internal panel. This process consumes precious PCIe bandwidth twice, resulting in an additional 10% efficiency drop beyond the standard encoding overhead. 
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                Occasional system shutdowns were observed during operation, and the issue culminated in a sudden power failure while displaying the Fire Strike results, leading to an investigation into potential power constraints. This instability is likely attributed to power supply fluctuations or bandwidth bottlenecks inherent in the EXP GDC interface. The motherboard may struggle to maintain a stable electrical signal while the GPU draws significant power, leading to system failure. Consequently, I attempted to rebalance the system's power load by fine-tuning the CPU's power limits. 
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                While the AMD RYZEN 7 4700U has a default TDP of 15W, I restricted it to a stable 13W to ensure system reliability, utilizing Ryzen Controller. I initially faced issues launching the software due to Windows Security restrictions. To resolve this, I added the application to the firewall's allowed list and configured an exclusion in Microsoft Defender Antivirus. After applying the settings, the operating temperature decreased by approximately 5°C. After stabilizing the power at 13W, the system demonstrated reliable operation during real-world stress tests, including gaming sessions.
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                Despite this improvement, occasional shutdowns persisted at 13W, prompting a final reconfiguration to 12W to ensure consistent system reliability. To maximize the stability, thermal paste was reapplied as part of the optimization process. Unfortunately, another shut down occurred, the TDP was ultimately reduced to 8W. This conservative limit was finalized to ensure absolute system stability and to preemptively eliminate any possibility of further power-related failures. Following this adjustment, the system cooler noise has been significantly reduced, and operating temperatures are now recorded in the mid-40s during simple web browsing.
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                The final 8W configuration resulted in a performance reduction of 23.5% for single-thread and 61.1% for multi-thread workloads. Although the performance loss was numerically significant, it was barely perceptible in my actual usage environment. Despite the performance drop since the initial setup, it hardly affects my actual gameplay given that I'm running low settings on a 1360 x 768 (60Hz) monitor. For better power stability, I bypassed the power strip and plugged the power supplies directly into the wall outlet. 
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                노트북에 외장 그래픽카드를 연결해서 사용하는 중입니다. 게임을 하기 위한 목적으로 중고 시장에서 그래픽카드를 구매했습니다. GeForce GTX 980 Ti는 2015년 6월 2일 출시된 NVIDIA의 고성능 그래픽카드였습니다. 당시 출시 가격은 649 달러였습니다. 해당 아키텍처는 전자기 복사 이론의 기틀을 마련한 제임스 맥스웰을 기념하여 명칭이 정해졌습니다. 노트북과 그래픽카드를 연결할 때는 다양한 방법이 존재합니다. 썬더볼트 단자가 없는 경우에는 EXP GDC를 활용할 수 있습니다. EXP GDC는 노트북 내부의 PCI-E 인터페이스를 외부 전환 장치로 확장해 주는 기기로, 모든 종류의 PCI-E 인터페이스 장치를 연결할 때 사용할 수 있습니다. 이는 노트북의 성능을 향상하거나, 높은 성능의 그래픽 카드를 연결하여 게임을 즐기기 위한 용도로 활용됩니다.
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px; padding-bottom: 0px; font-weight: 600;">
+                연결 방법
+            </div>
+
+            <div style="padding: 30px; padding-top: 7px;">
+                노트북의 와이파이, 블루투스 모듈 M.2 KEY를 제거하고 그곳에 EXP GDC를 연결합니다. 파워서플라이를 통해서 그래픽카드와 EXP GDC에 전원을 공급합니다. 기존에 설치된 그래픽 드라이버를 제거해야 정상적으로 사용할 수 있습니다. 왜냐하면 새로운 그래픽카드가 기존의 드라이버와 충돌할 수 있기 때문입니다. 앞선 과정을 거친 후 그래픽카드에 맞는 드라이버를 새로 설치하면 연결이 완료됩니다.              
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                PCIe(Peripheral Component Interconnect Express)는 전자 부품 간의 고속 데이터 전송에 사용되는 연결 유형입니다. PCIe 슬롯의 일반적인 용도로는 NVMe SSD를 통해 더 빠른 스토리지 추가, 향상된 게임 성능을 위해 기존 그래픽 카드 업그레이드, 전용 카드로 여러 모니터 연결, PCIe 이더넷 어댑터로 네트워크 옵션 확장 등이 있습니다. PCIe 5.0 규격서(PCI-SIG, 2019)의 Section 4.2에 명시된 바와 같이, 하위 호환성을 위해 유지되는 2.5 GT/s 데이터 전송률에서는 8b/10b 인코딩 방식이 사용됩니다. 신호 전송의 정확도와 안정성을 보장하기 위해, 8비트 데이터에 2비트를 더 붙여서 총 10비트로 변환해서 보내는 방식이 적용됩니다. 결과적으로 20%의 대역폭을 추가로 사용하여, 노트북에 그래픽카드를 연결하는 경우 성능 손실이 발생하게 됩니다. 
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                RYZEN 4700U의 싱글코어는 i5-7600K와 비슷한 성능입니다. 멀티 스레드 점수는 i7-8700K 보다 소폭 낮은 정도라고 볼 수 있습니다. 노트북에 외장 그래픽카드를 연결해 사용하는 과정에서 시스템이 갑자기 종료되는 현상이 종종 발생했습니다. PCIe를 통한 그래픽카드 연결 시 발생하는 메인보드 과전압으로 오류의 원인을 추정했습니다. 문제를 해결하기 위해서 프로세서의 TDP를 조절할 수 있는 소프트웨어(Ryzen Controller)를 사용해서 기존의 15W를 8W까지 낮추었습니다. 성능 손실이 발생하여 초기 설정에 비해 프레임 손실이 발생했지만, 1360 x 768 (60Hz) 모니터를 사용하고 있었기 때문에 그래픽 옵션을 낮춘 상태에서 게임 플레이에는 큰 지장이 없었습니다. 이후 시스템 안정성을 극대화하기 위해 그래픽카드와 메인보드의 전원공급장치를 콘센트에 직접 연결했습니다.
+            </div>
+
+            <div style="display: flex; justify-content: center; padding-top: 30px;">
+                <img src="/assets/img/rendez-vous/gtx980ticredits.jpg" style="width: 100%; height: 90vh; object-fit: cover;">
+            </div>
+
+            <div style="padding: 30px; padding-top: 30px; padding-bottom: 7px; font-size: 14px;">
+                System Information
+            </div>
+
+            <div style="padding: 30px; padding-top: 0px; padding-bottom: 10px; font-size: 13px;">
+                Memory: 8192 MB DDR4 @ 3192 Mhz X 2 (16GB) <br> Operating system: Windows 11 64-bit
+            </div>
+
+
+            <div style="padding: 30px; padding-top: 0px; font-size: 13px;">
+                P.S. I recently reinstalled Windows, and it turns out I’m now running at a 15W TDP by chance. However, I don't feel like I fully understand the EXP GDC setup yet, so I think I need to take some more time to figure things out.
+            </div>
+
+            <div style="padding: 30px; padding-top: 30px; padding-bottom: 0; font-size: 14px; font-weight: 500;">
+                참고문헌
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px; font-size: 13px;">
+                AscentOptics. (2024). PCIe 3.0 vs 4.0: Exploring the Differences. AscentOptics Blog. https://ascentoptics.com/blog/ko/pcie-3-0-vs-4-0-exploring-the-differences/
+                <br><br>
+                CORSAIR. (n.d.). PCIe란 무엇이며 어떻게 작동하나요?. https://www.corsair.com/kr/ko/explorer/diy-builder/storage/what-is-pcie-and-how-does-it-work/?srsltid=AfmBOooRJkpsr0XbJtcIDcs3PwcBjlwd3n4yUSovoZnANIjgDqWKg3eF
+                <br><br>
+                Corsair. (2023). What is DirectX & Why Does Every PC Game Need It?. Corsair Explorer. https://www.corsair.com/kr/ko/explorer/gamer/gaming-pcs/what-is-directx-why-does-every-pc-game-need-it/?srsltid=AfmBOoq99pzIcDvrN5LzfacCjUSAMTMkV4b2JHlGy3-rIH-9lijnyGDM
+                <br><br>
+                darkFlash. (2024). Understanding Graphics Card Interface: PCIe Port. darkFlash Official Blog. https://www.darkflash.com/ko-KR/article/PCIe-port
+                <br><br>
+                Geekworm. (2023). EXP GDC External Graphics Card Adapter (V8.0) Documentation. Geekworn Wiki. https://wiki.geekworm.com/GDC
+                <br><br>
+                Lenovo. (2024). PCIe란 무엇인가요?. Lenovo 용어 사전. https://www.lenovo.com/kr/ko/glossary/what-is-pcie/
+                <br><br>
+                Oreate AI. (2024). DirectX 11 vs DirectX 12: Which One Should You Choose for Gaming?. Oreate AI. https://www.oreateai.com/blog/directx-11-vs-directx-12-which-one-should-you-choose-for-gaming/d54f31b712039d871b342220b3556d8f
+                <br><br>
+                PCI-SIG. (2019). PCI Express® Base Specification Revision 5.0, Version 1.0. Beaverton, OR: PCI-SIG. https://picture.iczhiku.com/resource/eetop/SYkDTqhOLhpUTnMx.pdf#%5B%7B%22num%22%3A250%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C329%2C0%5D
+                <br><br>
+                Scale Computing. (2025). Understanding GPU architecture. https://www.scalecomputing.com/resources/understanding-gpu-architecture
+                <br><br>
+                TechPowerUp. (2025). NVIDIA GeForce GTX 980 Ti Specs. TechPowerUp GPU Database. https://www.techpowerup.com/gpu-specs/geforce-gtx-980-ti.c2724
+            
+            
+            
+            
+            
+            
+            
+            
+            </div>
+
+            <div style="padding: 30px; padding-top: 10px;">
+                
+            </div>
+
+
+               
+        </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <footer class="site-footer"> © 2026 LUNARIN. All Rights Reserved. </footer>
+    </div>
+
+</body>
+</html>
