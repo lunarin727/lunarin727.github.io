@@ -97,6 +97,7 @@ img {
 .text {
   text-align: left;
   font-family: "Noto Sans", "Noto Sans KR";
+  overflow-wrap: break-word;
 }
 
 h1 {
