@@ -28,8 +28,8 @@ a {
 .brand {
   font-size: 13px;
   font-family: "Special Elite";
-  padding-left: 10px;
-  padding-top: 5px;
+  padding-left: 15px;
+  padding-top: 2px;
 }
 
 .menu {
@@ -40,6 +40,7 @@ a {
   padding: 0;
   font-family: "Noto Sans";
   font-size: 14px;
+  margin-top: -2px;
 }
 
 .menu a {
