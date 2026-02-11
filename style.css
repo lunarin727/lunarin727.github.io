@@ -133,11 +133,20 @@ h4 {
 }
 
 
+.mainimg {
+  width: 55%;
+  height: auto;
+}
+
 
 @media (max-width: 1300px) {
     
     .box {
         flex-direction: column;
+    }
+
+    .mainimg {
+      width: 100%;
     }
 
   }
