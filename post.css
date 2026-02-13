@@ -26,10 +26,10 @@ a {
 }
 
 .brand {
-  font-size: 13px;
+  font-size: 12px;
   font-family: "Special Elite";
   padding-left: 15px;
-  padding-top: 2.5px;
+  padding-top: 3px;
 }
 
 .menu {
@@ -66,7 +66,7 @@ a {
 main { flex: 1; }                  
 
 .site-footer {
-  font-family: "Noto Sans KR";
+  font-family: "EB Garamond";
   background: white; 
   color: black;
   padding: 10px; 
