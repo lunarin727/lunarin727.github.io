@@ -166,3 +166,14 @@ hr {
   display: flex; justify-content: center;
   line-height: 1.3;
 }
+
+::-moz-selection {
+  background: #246B4A;
+  color: white;
+}
+
+
+::-moz-selection {
+  background: #246B4A;
+  color: white;
+}
